@@ -1,0 +1,16 @@
+{
+  "name": "sesbounce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.3.18",
+    "sqs-consumer": "^3.1.3",
+    "typescript": "^1.9.0-dev.20160608-1.0"
+  }
+}

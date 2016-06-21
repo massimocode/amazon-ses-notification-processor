@@ -1,0 +1,5 @@
+node_modules/
+typings/
+config.json
+lib/**/*.js
+lib/**/*.js.map
