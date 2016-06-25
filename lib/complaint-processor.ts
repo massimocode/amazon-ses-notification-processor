@@ -5,7 +5,7 @@ import ResultRecorder from './result-recorder';
 import BaseProcessor from './base-processor';
 
 export default class ComplaintProcessor extends BaseProcessor {
-  processNotification(envelope: AWS.SQS.Message, notification) {
+  processNotification(envelope: AWS.SQS.Message, notification): Promise<void> {
     let complaint = {
       FromEmail: notification.mail.source,
       MailSentAt: notification.mail.timestamp,
@@ -17,7 +17,11 @@ export default class ComplaintProcessor extends BaseProcessor {
       FullJSON: envelope.Body
     };
 
-    ResultRecorder.addComplaint(complaint);
+    return ResultRecorder.addComplaint(complaint);
+  }
+
+  getType(): string {
+    return "Complaint";
   }
 }
 

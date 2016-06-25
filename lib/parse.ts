@@ -37,5 +37,11 @@ let setToExclude = new Set(transientBounces);
 results.bounces = results.bounces.filter(x => setToExclude.has(x.ToEmail) === false);
 
 
+console.log('\n\n\nERRORS');
+for (let error of results.errors) {
+  console.log(error);
+}
+results.errors = [];
+
 
 ResultRecorder.save();

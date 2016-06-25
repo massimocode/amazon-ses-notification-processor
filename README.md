@@ -10,9 +10,9 @@ The parse script outputs email addresses of any recipients who have marked the m
 
 Once you have configured the settings necessary (see Configuration below), usage is quite simple.
 
-To get all the notifications from the queue, simply run `node lib/index`.
+To get all the notifications from the queue, simply run `npm fetch`.
 
-To parse those notifications using the provided script, run `node lib/parse`.
+To parse those notifications using the provided script, run `npm parse`.
 
 ## Configuration
 
@@ -26,3 +26,6 @@ You need to create a `config.json` file at the root of the project. You need the
   "complaint-queue": "https://complaints-queue-url"
 }
 ```
+
+## Limitations
+This has been developed and tested using Node v4.2.2. I am not sure if it would work on earlier versions of Node.

@@ -5,7 +5,7 @@ import ResultRecorder from './result-recorder';
 import BaseProcessor from './base-processor';
 
 export default class BounceProcessor extends BaseProcessor {
-  processNotification(envelope: AWS.SQS.Message, notification) {
+  processNotification(envelope: AWS.SQS.Message, notification): Promise<void> {
     let hasBounceDetails = notification.bounce.bouncedRecipients.length > 0;
     let bounce = {
       FromEmail: notification.mail.source,
@@ -20,7 +20,11 @@ export default class BounceProcessor extends BaseProcessor {
       DiagnosticCode: hasBounceDetails ? notification.bounce.bouncedRecipients[0].diagnosticCode : null,
       FullJSON: envelope.Body
     };
-    ResultRecorder.addBounce(bounce);
+    return ResultRecorder.addBounce(bounce);
+  }
+
+  getType(): string {
+    return "Bounce";
   }
 }
 

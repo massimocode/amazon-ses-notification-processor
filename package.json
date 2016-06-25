@@ -4,7 +4,8 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "fetch": "node node_modules/typescript/bin/tsc && node lib/fetch.js",
+    "parse": "node node_modules/typescript/bin/tsc && node lib/parse.js"
   },
   "author": "",
   "license": "ISC",

@@ -15,16 +15,19 @@ interface Results {
 let results: Results = require('../output.json');
 
 export default class ResultRecorder {
-  static addBounce(bounce): void {
+  static addBounce(bounce): Promise<void> {
     results.bounces.push(bounce);
+    return ResultRecorder.save();
   }
 
-  static addComplaint(complaint): void {
+  static addComplaint(complaint): Promise<void> {
     results.complaints.push(complaint);
+    return ResultRecorder.save();
   }
 
-  static addError(error: Error): void {
+  static addError(error: Error): Promise<void> {
     results.errors.push({ message: error.message, stack: error.stack });
+    return ResultRecorder.save();
   }
 
   static getResults(): Results {
