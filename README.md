@@ -10,9 +10,9 @@ The parse script outputs email addresses of any recipients who have marked the m
 
 Once you have configured the settings necessary (see Configuration below), usage is quite simple.
 
-To get all the notifications from the queue, simply run `npm fetch`.
+To get all the notifications from the queue, simply run `npm run fetch`.
 
-To parse those notifications using the provided script, run `npm parse`.
+To parse those notifications using the provided script, run `npm run parse`.
 
 ## Configuration
 
