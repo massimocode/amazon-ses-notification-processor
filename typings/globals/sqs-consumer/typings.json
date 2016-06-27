@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/1ec3d510e0c4d7c50e708ca7cb0765c7e06fa2ed/sqs-consumer/sqs-consumer.d.ts",
+    "raw": "registry:dt/sqs-consumer#0.0.0+20160512054918",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/1ec3d510e0c4d7c50e708ca7cb0765c7e06fa2ed/sqs-consumer/sqs-consumer.d.ts"
+  }
+}
