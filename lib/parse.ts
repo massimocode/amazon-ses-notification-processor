@@ -5,8 +5,19 @@ import ResultRecorder from './result-recorder';
 let results = ResultRecorder.getResults();
 
 console.log('COMPLAINTS');
-for (let complainer of new Set(results.complaints.map(x => x.ToEmail))) {
-  console.log(complainer);
+let complaintsPerEmail = new Map<string, string[]>();
+for (let complaint of results.complaints) {
+  if (!complaintsPerEmail.has(complaint.FromEmail)) {
+    complaintsPerEmail.set(complaint.FromEmail, []);
+  }
+  complaintsPerEmail.get(complaint.FromEmail).push(complaint.ToEmail);
+}
+for (let fromEmail of complaintsPerEmail.keys()) {
+  console.log(`FROM ${fromEmail}`);
+  for (let emailAddress of new Set(complaintsPerEmail.get(fromEmail))) {
+    console.log(emailAddress);
+  }
+  console.log('\n\n\n')
 }
 results.complaints = [];
 
